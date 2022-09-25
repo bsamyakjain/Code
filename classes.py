@@ -40,19 +40,20 @@ class cars:
         self.__name = name
         self.salary = salary
 
-    def display(self):
+    def __display(self):
         print(self.__name,self.salary)
 
 
 c1 = cars("Samyak", 60000)
 c1.salary = 40000
 
-c1.display()
+c1._cars__display()
 
 #we can access them using _class
 c1._cars__name = "mark"
 print()
-c1.display()
+
 #so there are only public and private.
 
 
+#Inheritance
