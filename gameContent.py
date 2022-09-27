@@ -7,10 +7,18 @@ class MasterMind:
 
     @staticmethod
     def disp():
-        print("""press the below option to play game:
-        -> 'y' to play
-        -> 'n' to stop
-         """)
+        print("~~~ Welcome to Mastermind Game ~~~ ")
+        username = input("Hi gamer, welcome to the Mastermind game  What is your name? ")
+        print(f"Hello, {username}, Please follow the given instructions to play the game")
+
+        print(""" ~~~GAME INSTRUCTION~~~ 
+                I am thinking of a 3-digit number. Try to guess what it is. 
+                Here are some clues: 
+                When I say:       That means: 
+                Yellow            One digit is correct but in the wrong position. 
+                Green             One digit is correct and in the right position.      
+                Red               No digit is correct. 
+                For example, if the secret number was 346 and your guess was 843, the  clues would be Green Yellow.''' """)
 
 
     @classmethod
@@ -29,8 +37,10 @@ class MasterMind:
             return "Green"
         
         #some digit is correct ie num is 123 and user guess 12 then yellow signal
-        elif user_input in num or num in user_input:
-            return "yellow"
+        for i in user_input:
+            if i in num:
+                return "yellow"
+        
 
         # guess wrong number
         else:
